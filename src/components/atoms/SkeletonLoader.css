@@ -1,0 +1,25 @@
+/* src/components/atoms/SkeletonLoader.css */
+.skeleton-loader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .skeleton-line {
+    height: 20px;
+    background-color: #ccc;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: #ccc;
+    }
+    50% {
+      background-color: #ddd;
+    }
+    100% {
+      background-color: #ccc;
+    }
+  }
+  
