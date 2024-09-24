@@ -1,70 +1,212 @@
-# Getting Started with Create React App
+Weather App Documentation
+Project Overview
+This project is a weather application that provides users with the temperature forecast for the last 5 days in a specified country. Users can view temperatures in both Celsius and Fahrenheit. The app includes a search box that allows users to easily search for weather data by country.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Key Features
+5-Day Temperature Forecast: Displays the temperature for the last 5 days.
+Unit Conversion: Users can switch between Celsius and Fahrenheit.
+Search Functionality: Users can search for any country to get the corresponding weather data.
+Dependencies
+To set up and run this project, the following dependencies are required:
 
-## Available Scripts
+bash
+Copy code
+npm install @reduxjs/toolkit
+npm install --save redux react-redux
+Redux Toolkit
+The Redux Toolkit is used for managing the application state in a predictable manner. It simplifies the process of writing Redux logic.
 
-In the project directory, you can run:
+React-Redux
+React-Redux connects React components to the Redux store, allowing them to access and dispatch actions.
 
-### `npm start`
+Project Structure
+The project follows an atomic design structure, ensuring that components are organized into reusable units:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+less
+Copy code
+src/
+├── components/
+│   ├── atoms/            // Basic UI elements (e.g., CityName, Temperature, WeatherIcon)
+│   ├── molecules/        // Combinations of atoms (e.g., CurrentWeather, ForecastCard)
+│   ├── organisms/        // Groups of molecules (e.g., WeatherDisplay)
+│   ├── templates/        // Page layout (e.g., MainTemplate)
+│   └── Search.js         // Search component for country input
+├── redux/
+│   ├── store.js          // Redux store configuration
+│   └── weatherSlice.js    // Redux slice for weather data management
+├── services/
+│   └── weatherAPI.js      // API calls to fetch weather data
+├── App.js                // Main application component
+├── index.js              // Entry point of the application
+├── .env                  // Environment variables (e.g., API keys)
+└── styles/
+    └── main.css         // Main stylesheet for the application
+Implementation Details
+1. 5-Day Temperature Forecast
+The app retrieves weather data for the last 5 days using an external weather API. This data is then processed and displayed to the user in a user-friendly format.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Unit Conversion
+Users can toggle between Celsius and Fahrenheit. The app converts the temperature data dynamically based on the selected unit.
 
-### `npm test`
+3. Search Functionality
+A search box allows users to input the name of a country. Upon submission, the app fetches and displays the weather data for that specific country.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. State Management with Redux
+Redux is used to manage the application state, including current weather data and forecasts. The weatherSlice contains actions and reducers to handle fetching and updating weather data.
+5. Lazy Loading
+The app uses lazy loading to improve performance by splitting the code into smaller chunks. This way, components are loaded only when needed, which helps reduce the initial load time.
 
-### `npm run build`
+6. Atomic Design
+The application is organized using atomic design principles, allowing for better modularity and reusability of components. Components are categorized into atoms, molecules, organisms, and templates.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Memory updated
+Here's a structured documentation for your weather app project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Weather App Documentation
+Project Overview
+This project is a weather application that provides users with the temperature forecast for the last 5 days in a specified country. Users can view temperatures in both Celsius and Fahrenheit. The app includes a search box that allows users to easily search for weather data by country.
 
-### `npm run eject`
+Key Features
+5-Day Temperature Forecast: Displays the temperature for the last 5 days.
+Unit Conversion: Users can switch between Celsius and Fahrenheit.
+Search Functionality: Users can search for any country to get the corresponding weather data.
+Dependencies
+To set up and run this project, the following dependencies are required:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy code
+npm install @reduxjs/toolkit
+npm install --save redux react-redux
+Redux Toolkit
+The Redux Toolkit is used for managing the application state in a predictable manner. It simplifies the process of writing Redux logic.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+React-Redux
+React-Redux connects React components to the Redux store, allowing them to access and dispatch actions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Project Structure
+The project follows an atomic design structure, ensuring that components are organized into reusable units:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+less
+Copy code
+src/
+├── components/
+│   ├── atoms/            // Basic UI elements (e.g., CityName, Temperature, WeatherIcon)
+│   ├── molecules/        // Combinations of atoms (e.g., CurrentWeather, ForecastCard)
+│   ├── organisms/        // Groups of molecules (e.g., WeatherDisplay)
+│   ├── templates/        // Page layout (e.g., MainTemplate)
+│   └── Search.js         // Search component for country input
+├── redux/
+│   ├── store.js          // Redux store configuration
+│   └── weatherSlice.js    // Redux slice for weather data management
+├── services/
+│   └── weatherAPI.js      // API calls to fetch weather data
+├── App.js                // Main application component
+├── index.js              // Entry point of the application
+├── .env                  // Environment variables (e.g., API keys)
+└── styles/
+    └── main.css         // Main stylesheet for the application
+Implementation Details
+1. 5-Day Temperature Forecast
+The app retrieves weather data for the last 5 days using an external weather API. This data is then processed and displayed to the user in a user-friendly format.
 
-## Learn More
+2. Unit Conversion
+Users can toggle between Celsius and Fahrenheit. The app converts the temperature data dynamically based on the selected unit.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Search Functionality
+A search box allows users to input the name of a country. Upon submission, the app fetches and displays the weather data for that specific country.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Search Component Code:
+javascript
+Copy code
+import React, { useState } from 'react';
 
-### Code Splitting
+const Search = ({ onSearch }) => {
+    const [city, setCity] = useState('');
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (city) {
+            onSearch(city);
+            setCity('');
+        }
+    };
 
-### Analyzing the Bundle Size
+    return (
+        <form onSubmit={handleSubmit} className="search-form">
+            <input
+                type="text"
+                placeholder="Search city..."
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+            />
+            <button type="submit">Search</button>
+        </form>
+    );
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default Search;
+4. State Management with Redux
+Redux is used to manage the application state, including current weather data and forecasts. The weatherSlice contains actions and reducers to handle fetching and updating weather data.
 
-### Making a Progressive Web App
+Example of Redux Slice:
+javascript
+Copy code
+import { createSlice } from '@reduxjs/toolkit';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+const weatherSlice = createSlice({
+    name: 'weather',
+    initialState: {
+        currentWeather: null,
+        forecast: [],
+        loading: false,
+        unit: 'Celsius',
+    },
+    reducers: {
+        fetchWeatherStart(state) {
+            state.loading = true;
+        },
+        fetchWeatherSuccess(state, action) {
+            state.currentWeather = action.payload.currentWeather;
+            state.forecast = action.payload.forecast;
+            state.loading = false;
+        },
+        fetchWeatherFailure(state, action) {
+            state.loading = false;
+            // Handle error
+        },
+        toggleUnit(state) {
+            state.unit = state.unit === 'Celsius' ? 'Fahrenheit' : 'Celsius';
+        },
+    },
+});
 
-### Advanced Configuration
+export const {
+    fetchWeatherStart,
+    fetchWeatherSuccess,
+    fetchWeatherFailure,
+    toggleUnit,
+} = weatherSlice.actions;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export default weatherSlice.reducer;
+5. Lazy Loading
+The app uses lazy loading to improve performance by splitting the code into smaller chunks. This way, components are loaded only when needed, which helps reduce the initial load time.
 
-### Deployment
+6. Atomic Design
+The application is organized using atomic design principles, allowing for better modularity and reusability of components. Components are categorized into atoms, molecules, organisms, and templates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Running the App
+To run the application, follow these steps:
 
-### `npm run build` fails to minify
+Install the necessary dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+bash
+Copy code
+npm install
+Add your API key in the .env file.
+
+Start the application:
+
+bash
+Copy code
+npm start
